@@ -35,14 +35,19 @@
             text-align: center;
             font-size: larger;
         }
-        h1{
-            color:purple ;
-            word-spacing: 10px;
-        }
+        
         .star p{
             color: plum;
             font-style: italic;
             font-size: x-large;
+        }
+        .nice-fonts{
+            font-style: italic;
+            font-size: x-large;
+
+        }
+        .hidden{
+            visibility: hidden;
         }
     </style>
 </head>
@@ -136,6 +141,11 @@
             </td>
         </tr>
   </table>
+ <div class="text-area">
+      <textarea>
+           type here...
+      </textarea>
+ </div>
   <footer>
       <div>
           Star Mart
@@ -145,5 +155,40 @@
           Germany.
       </div>
   </footer>
+  <script>
+      function changeH1Text(){
+          document.querySelector('h1').innerText="worked!"
+      }
+      function backgroundColor(){
+          document.querySelector('body').style.backgroundColor ="coral"
+      }
+      function fakeAddress(){
+        document.querySelector('footer>div:nth-child(2').innerText="5678 snowy street ,saxony.Germany."
+        
+      }
+      function addClass(){
+         for (let node of document.querySelectorAll('a')){
+             node.classList.add('nice-fonts')
+         }
+      }
+      function toggleImages(){
+          for(let image of document.querySelectorAll('img')){
+              image.classList.toggle('hidden')
+          }
+      }
+      function changeColor(){
+          const color=getRandomColor()
+          for (let cost of document.querySelectorAll('tr>td:nth-child(4)')){
+              cost.style.color=color;
+          }
+         
+      }    
+      function getRandomColor(){
+          const red= Math.round(Math.random()*240)
+          const green=(Math.round(Math.random()*240))
+          const blue=(Math.round(Math.random()*240))
+          return "rgb("+ red +","+ green +","+ blue +")"
+      }
+  </script>
 </body>
 </html>
